@@ -13,5 +13,42 @@ namespace Employee_CRUD
         {
 
         }
+
+        private void LoadData()
+        {
+            //do something
+        }
+
+        protected void Insert(object sender, EventArgs e)
+        {
+            //do something
+        }
+
+        protected void Clear(object sender, EventArgs e)
+        {
+            //do something
+        }
+
+        protected void OnRowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridView1.EditIndex = e.NewEditIndex;
+            this.LoadData();
+        }
+
+        protected void OnRowCancelingEdit(object sender, EventArgs e)
+        {
+            GridView1.EditIndex = -1;
+            this.LoadData();
+        }
+
+        protected void OnRowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            // do something
+        }
+
+        protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            // do something
+        }
     }
 }

@@ -60,6 +60,39 @@
                 </tr>
             </table>
         </div>
+        <br />
+        <p>Employee Records</p>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EmpId"
+        OnRowEditing="OnRowEditing" OnRowCancelingEdit="OnRowCancelingEdit"
+        OnRowUpdating="OnRowUpdating" OnRowDeleting="OnRowDeleting" EmptyDataText="No records has been added." Width="930px">
+            <Columns>
+                <asp:TemplateField HeaderText="Name">
+                    <ItemTemplate>
+                        <asp:Label ID="lblEmpName" runat="server" Text='<%# Eval("empName") %>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtEmpName" runat="server" Text='<%# Eval("empName") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>                
+                <asp:TemplateField HeaderText="Email">
+                    <ItemTemplate>
+                        <asp:Label ID="lblEmpEmail" runat="server" Text='<%# Eval("empEmail") %>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtEmpEmail" runat="server" Text='<%# Eval("empEmail") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Telephone">
+                    <ItemTemplate>
+                        <asp:Label ID="lblEmpTelephone" runat="server" Text='<%# Eval("empTelephone") %>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtEmpTelephone" runat="server" Text='<%# Eval("empTelephone") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+                <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true" ItemStyle-Width="150"  />
+            </Columns>
+        </asp:GridView>
     </form>
 </body>
 </html>
